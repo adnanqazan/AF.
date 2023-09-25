@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Medication reminder </title>
+<style> 
+/* Reset some default browser styles */
+body, h1, h2 , table, th, td {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Apply a background color and set text color */
+body {
+    background-image: url('img3.jpg'); /* تغيير الصورة الخلفية */
+    background-size: cover; /* تغطية الشاشة بالصورة */
+    background-repeat: no-repeat;
+    color: #333;
+    font-family: Arial, sans-serif;
+      line-height: 1.6;
+      font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+h1 {
+    text-align: center;
+    color: #333;
+        padding: 20px;
+    font-size: 24px;
+      font-weight: bold;
+}
+
+/* Style the container */
+.container {
+    background-color: #fff;
+    border: 5px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the select and input elements */
+#medicineList, #reminderTime {
+    width: 50%;
+    padding: 22px;
+    margin: 10px 0;
+    border: 1px solid blue;
+    border-radius: 5px;
+    
+}
+/* Style the button */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the lists */
+ul {
+    list-style: none;
+    list-style-type: none;
+      padding: 0;
+      margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.spacer {
+            margin-bottom: 20px;
+        }
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style the table headers */
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Style the additional alerts */
+#additionalAlerts li {
+    margin-left: 20px;
+    list-style: inside;
+}
+    li {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+    .reminder {
+      color: #f00;
+      font-weight: bold;
+    }
+    .time {
+      color: #00f;
+      font-style: italic;
+    }
+    .info {
+      margin-top: 10px;
+    }
+    .info p {
+      margin: 0;
+      padding: 0;
+    }
+    .info.name {
+      color: #00f;
+      font-weight: bold;
+    }
+    .info.dose {
+      color: #f00;
+      font-weight: bold;
+    }
+    .info.instructions {
+      color: #00f;
+      font-style: italic;
+    }
+    .alert {
+      background-color: #ff9900;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px;
+      text-align: center;
+    }
+
+</style>
+</head>
+<body>
+    <h1> Medication reminder </h1>
+    <select id="medicineList">
+        <option value="medicine1">Medicine 1</option>
+        <option value="medicine2">Medicine 2</option>
+        <option value="medicine3">Medicine 3</option>
+    </select>
+    <input type="datetime-local" id="reminderTime"> <br>
+    <button onclick="setReminder()">Set Reminder</button>
+   
+
+<div class="container">
+    <h2>Medication List</h2> <br>
+    <ul>
+        <li><b>Medicine 1:</b> Description of the medication and its dosage.</li>
+        <br><br>
+        <li><b>Medicine 2:</b> Description of the medication and its dosage.</li>
+        <!--You can add more medications here -->
+    </ul>
+        <br><br><br>
+        <h2>Information about medications</h2> <br>
+        <ul>
+            <li><b>Medicine 1:</b> Additional information about the medication.</li>
+            <br><br>
+            <li><b>Medicine 2:</b> Additional information about the medication.</li>
+            <!--You can add more medication information here -->
+        </ul>
+        <br><br><br>
+
+        <h2>Medication history</h2> <br>
+        <table>
+            <tr>
+                <th>Medication</th>
+                <th>Time</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <td>Medicine 1</td>
+                <td>Time to eat</td>
+                <td>Amount consumed</td>
+            </tr>
+            <tr>
+                <td>Medication 2</td>
+                <td>Time to eat</td>
+                <td>Amount consumed</td>
+            </tr>
+            <!--You can add more records here -->
+        </table>
+        <br><br><br>
+
+        <h2>Additional warnings</h2> <br>
+        <ul>
+            <li>It is preferable to take medications after meals.</li>
+            <br><br>
+            <li>Accurate time reminder can be activated from application settings.</li>
+        </ul>
+        
+        <!-- Add any other information if required -->
+
+    </div>
+
+    <script>
+       function setReminder() {
+    const selectedMedicine = document.getElementById("medicineList").value;
+    const reminderTime = document.getElementById("reminderTime").value;
+    
+    // Save medicine and reminder time to a database or storage
+    // You can use localStorage or a server for this purpose
+    
+    // Display medicine information
+    const medicineInfo = getMedicineInfo(selectedMedicine);
+    document.getElementById("medicineInfo").innerHTML = medicineInfo;
+
+    // Set a reminder using JavaScript's setTimeout
+    const currentTime = new Date().getTime();
+    const selectedTime = new Date(reminderTime).getTime();
+    const timeDiff = selectedTime - currentTime;
+    
+    setTimeout(() => {
+        alert(`الدواء: ${selectedMedicine} الوقت: ${reminderTime}`);
+    }, timeDiff);
+}
+
+function getMedicineInfo(medicine) {
+    // Retrieve and return medicine information from your database or API
+    // You can use AJAX or fetch to get this data
+    return `معلومات عن ${medicine}`;
+}
+
+    </script>
+</body>
+</html>

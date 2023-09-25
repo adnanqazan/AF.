@@ -1,0 +1,176 @@
+body {
+  background-color: rgb(69, 69, 185);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+body div .abs {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    min-height: 480px;
+    margin: auto;
+    display: flex;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sign-up-container {
+    background-color: #ffffff;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.sign-up-container.active {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+button {
+    border-radius: 20px;
+    border: none;
+    background-color: blue;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.2s ease-in, background-color 0.2s ease-in;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:active {
+    transform: scale(0.95);
+    background-color: blue;
+}
+
+button:focus {
+    outline: none;
+}
+
+input {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.social-container {
+    margin: 20px 0;
+}
+
+.social {
+    font-size: 24px;
+    color: #333;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.social:hover {
+    color: #FF4828;
+}
+div.abs{
+    position: absolute;
+  }
+  button#loginButton {
+    font-size: 20px;
+    border: none;
+    background-color: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  /* أسلوب القائمة المنسدلة */
+  div#loginDropdown {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0;
+    margin-bottom: 445px;
+  }
+  #loginButton {
+    background: none; /* إزالة الخلفية */
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 0; /* إزالة الحشوة داخل الزر */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  #loginButton i {
+    margin-right: 5px;
+  }
+  
+  .fa.fa-times-circle-o {
+    display: none;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  /* تنسيق الروابط العادية */
+  .abs a {
+    color:black; /* لون النص */
+    text-decoration: none; /* إزالة تزيين الروابط (التأثير السفلي) */
+  }
+  /* تنسيق الروابط عند التحويل إليها بواسطة الماوس */
+  .abs a:hover { 
+    padding: 10px;
+    border: pink ;
+    border-radius: 5px; /* زاويا دائرية للزر */
+    color: white;
+    background-color: blue;
+    text-decoration: none; /* إضافة تأثير سفلي عند التحويل إلى الرابط */
+  }
+  body {
+    background-color: rgb(69, 69, 185);
+
+  }

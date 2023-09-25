@@ -1,0 +1,38 @@
+/* استهدف نموذج اتصل بنا */
+form {
+    background-color: #f7f7f7;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+  }
+  
+  /* استهداف حقول الإدخال */
+  form label, form input, form textarea {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  form input, form textarea {
+    width: 50%;
+    height: 50%;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+  }
+  
+  /* استهداف زر الإرسال */
+  form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+  }

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="tracking.css">
+    <title>Disease tracking</title>
+</head>
+<body>
+    <h1>Data Registration Form</h1>
+    <form id="patientForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <label for="symptoms">Symptoms:</label>
+        <textarea id="symptoms" name="symptoms"></textarea><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+    <div id="output"></div>
+
+    <h1>Spreadsheet</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ahmed</td>
+                <td>25</td>
+                <td>Successful</td>
+            </tr>
+            <tr>
+                <td>Sarah</td>
+                <td>30</td>
+                <td>Successful</td>
+            </tr>
+            <tr>
+                <td>Muhammad</td>
+                <td>22</td>
+                <td>Fail</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Monitoring appointments</h1>
+    <div>
+        <input type="text" id="task" placeholder="Add new task">
+        <button id="addTask">Add task</button>
+    </div>
+    <ul id="taskList">
+        <!-- Fill tasks here through JavaScript -->
+    </ul>
+
+
+    <h1>Communicating with the doctor</h1>
+    <div id="chat">
+        <div id="chat-messages"></div>
+        <input type="text" id="message" placeholder="Type your message">
+        <button id="send">Send</button>
+    </div>
+
+
+    <h1>Monitoring health indicators - heartbeat</h1>
+    <canvas id="heartRateChart" width="400" height="200"></canvas>
+
+    <h1>Monitoring vaccinations and medications</h1>
+    <h2>Vaccination List</h2>
+    <table id="vaccineTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Vaccination data will be filled here through JavaScript -->
+        </tbody>
+    </table>
+
+    <h2>Medication List</h2>
+    <table id="medicineTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Dosage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Drug data will be filled here through JavaScript -->
+        </tbody>
+    </table>
+
+   <h2>Add a new vaccination</h2>
+    <input type="text" id="vaccineName" placeholder="VaccineName">
+    <input type="date" id="vaccineDate">
+    <button id="addVaccine">Add</button>
+
+    <h2>Add a new medicine</h2>
+    <input type="text" id="medicineName" placeholder="MedicineName">
+    <input type="text" id="medicineDose" placeholder="Dose">
+    <button id="addMedicine">Add</button>
+
+
+
+    <h1>Risk Assessment Form</h1>
+    <form id="riskAssessmentForm">
+        <label for="likelihood">Probability of occurrence (from 1 to 5):</label>
+        <input type="number" id="likelihood" name="likelihood" min="1" max="5" required><br><br>
+
+        <label for="impact">Impact of event (1 to 5):</label>
+        <input type="number" id="impact" name="impact" min="1" max="5" required><br><br>
+
+        <label for="riskDescription">Risk Description:</label>
+        <textarea id="riskDescription" name="riskDescription" required></textarea><br><br>
+
+        <button type="button" id="calculateRisk">Risk values</button>
+    </form>
+
+    <h2>Assessment result:</h2>
+    <p id="riskResult"></p>
+
+
+    <h1>Alert improvements</h1>
+
+    <!--Button to display a custom alert -->
+    <button id="customAlert">Custom Alert</button>
+
+
+    <h1 id="welcome_message">Willkommen auf unserer Website!</h1>
+    <a href="#" id="about_us">Über uns</a>
+    <a href="#" id="contact_us">Kontaktiere uns</a>
+    
+    <div>
+        <label for="language_select">Select Language:</label>
+        <select id="language_select">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="he">עִברִית</option>
+            <option value="tr">Türkçe</option>
+        </select>
+    </div>
+
+
+
+<script> 
+//تسجيل البيانات 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("patientForm");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const patientData = {};
+
+        formData.forEach((value, key) => {
+            patientData[key] = value;
+        });
+
+        // يمكنك هنا إرسال بيانات المريض إلى الخادم أو قاعدة البيانات للتخزين والتحليل.
+        // يمكنك أيضًا تحقيق التواصل مع الطبيب المختص هنا.
+        
+        // عرض بيانات المريض بشكل احترافي في الصفحة.
+        output.innerHTML = `<h2>Data recorded successfully:</h2>
+                            <p>Name: ${patientData.name}</p>
+                            <p>Age: ${patientData.age}</p>
+                            <p>Symptoms: ${patientData.symptoms}</p>`;
+    });
+});
+// رصد البيانات 
+document.addEventListener("DOMContentLoaded", function () {
+    const table = document.getElementById("data-table");
+    const tbody = table.querySelector("tbody");
+    const rows = tbody.querySelectorAll("tr");
+
+    // حساب إحصائيات بسيطة مثل المتوسط العمري
+    let totalAge = 0;
+    let totalStudents = 0;
+
+    rows.forEach((row) => {
+        const age = parseInt(row.children[1].textContent);
+        totalAge += age;
+        totalStudents++;
+
+        // تحديد الصف بناءً على نتيجة الطالب
+        const result = row.children[2].textContent;
+        if (result === "fail") {
+            row.classList.add("fail");
+        } else {
+            row.classList.add("pass");
+        }
+    });
+
+    // عرض إحصائيات بسيطة
+    const averageAge = totalAge / totalStudents;
+    console.log(`Average age: ${averageAge}`);
+
+    // يمكنك أيضًا إجراء تحليلات أخرى حسب احتياجاتك هنا.
+
+});
+
+
+// مراقبة المواعيد 
+document.addEventListener("DOMContentLoaded", function () {
+    const taskInput = document.getElementById("task");
+    const addTaskButton = document.getElementById("addTask");
+    const taskList = document.getElementById("taskList");
+
+    // إضافة مهمة جديدة عند النقر على الزر
+    addTaskButton.addEventListener("click", function () {
+        const taskText = taskInput.value.trim();
+        if (taskText !== "") {
+            const taskItem = document.createElement("li");
+            taskItem.textContent = taskText;
+            taskList.appendChild(taskItem);
+            taskInput.value = "";
+        }
+    });
+
+    // إزالة مهمة عند النقر عليها
+    taskList.addEventListener("click", function (e) {
+        if (e.target.tagName === "LI") {
+            e.target.remove();
+        }
+    });
+
+    // يمكنك هنا إضافة التعقب والتنبيهات للمواعيد النهائية حسب احتياجاتك.
+
+});
+
+
+// التواصل مع الطبيب 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const chatMessages = document.getElementById("chat-messages");
+    const messageInput = document.getElementById("message");
+    const sendButton = document.getElementById("send");
+
+    // سيمثل هذا المتغير الطبيب (في هذا المثال تمثيل بسيط)
+    const doctor = {
+        name: "the doctor",
+    };
+
+    // دالة لإضافة رسالة إلى الدردشة
+    function addMessage(sender, text) {
+        const messageElement = document.createElement("div");
+        messageElement.textContent = `${sender}: ${text}`;
+        chatMessages.appendChild(messageElement);
+    }
+
+    // دالة لإرسال رسالة
+    function sendMessage() {
+        const messageText = messageInput.value.trim();
+        if (messageText !== "") {
+            addMessage("You", messageText);
+            // يمكنك هنا تنفيذ التواصل مع الطبيب واستبدال الرد بما يلائم النظام الخاص بك.
+            // في هذا المثال، سنرد باستخدام نص بسيط.
+            setTimeout(function () {
+                addMessage(doctor.name, "How can I help you?");
+                        }, 1000);
+            messageInput.value = "";
+        }
+    }
+
+    // النقر على زر الإرسال لإرسال الرسالة
+    sendButton.addEventListener("click", sendMessage);
+
+    // الضغط على مفتاح Enter لإرسال الرسالة
+    messageInput.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+    // بدء الدردشة برسالة ترحيبية
+    addMessage(doctor.name, "Hello! How can I help you today?");});
+
+
+// مراقبة المؤشرات الصحية 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const heartRateChart = document.getElementById("heartRateChart").getContext("2d");
+
+    // بيانات نبضات القلب (مثال بسيط)
+    const heartRateData = {
+        labels: ["Time"],
+        datasets: [{
+            label: "نبضات القلب",
+            data: [72], // بيانات نبضات القلب هنا (مثال: 72 نبضة في الدقيقة)
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+        }],
+    };
+
+    // خيارات المخطط
+    const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: "beats per minute",
+                                },
+            },
+        },
+    };
+
+    // إنشاء مخطط نبضات القلب
+    const heartRateLineChart = new Chart(heartRateChart, {
+        type: "line",
+        data: heartRateData,
+        options: chartOptions,
+    });
+
+    // تحديث بيانات نبضات القلب (يمكنك تحسينه لجلب البيانات بشكل دوري من جهاز قياس نبضات القلب)
+    function updateHeartRate() {
+        const newHeartRate = Math.floor(Math.random() * 30) + 70; // نبضات عشوائية بين 70 و 100
+        heartRateData.datasets[0].data.push(newHeartRate);
+
+        if (heartRateData.datasets[0].data.length > 10) {
+            heartRateData.datasets[0].data.shift(); // إزالة القيمة الأقدم عند وصول القيم للحد الأقصى
+        }
+
+        heartRateLineChart.update();
+    }
+
+    // تحديث نبضات القلب بشكل دوري كتجربة (يمكن تكوينها لاستخدام البيانات الحقيقية)
+    setInterval(updateHeartRate, 3000); // تحديث كل 3 ثواني
+
+});
+
+
+// مراقبة التطعيمات والادوية 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const vaccineTable = document.getElementById("vaccineTable").getElementsByTagName("tbody")[0];
+    const medicineTable = document.getElementById("medicineTable").getElementsByTagName("tbody")[0];
+    const addVaccineButton = document.getElementById("addVaccine");
+    const addMedicineButton = document.getElementById("addMedicine");
+    const vaccineNameInput = document.getElementById("vaccineName");
+    const vaccineDateInput = document.getElementById("vaccineDate");
+    const medicineNameInput = document.getElementById("medicineName");
+    const medicineDoseInput = document.getElementById("medicineDose");
+
+    // دالة لإضافة صف لجدول التطعيمات
+    function addVaccineRow(name, date) {
+        const row = vaccineTable.insertRow();
+        const cell1 = row.insertCell(0);
+        const cell2 = row.insertCell(1);
+        cell1.innerHTML = name;
+        cell2.innerHTML = date;
+    }
+
+    // دالة لإضافة صف لجدول الأدوية
+    function addMedicineRow(name, dose) {
+        const row = medicineTable.insertRow();
+        const cell1 = row.insertCell(0);
+        const cell2 = row.insertCell(1);
+        cell1.innerHTML = name;
+        cell2.innerHTML = dose;
+    }
+
+    // إضافة تطعيم جديد عند النقر على الزر
+    addVaccineButton.addEventListener("click", function () {
+        const vaccineName = vaccineNameInput.value.trim();
+        const vaccineDate = vaccineDateInput.value.trim();
+        if (vaccineName !== "" && vaccineDate !== "") {
+            addVaccineRow(vaccineName, vaccineDate);
+            vaccineNameInput.value = "";
+            vaccineDateInput.value = "";
+        }
+    });
+
+    // إضافة دواء جديد عند النقر على الزر
+    addMedicineButton.addEventListener("click", function () {
+        const medicineName = medicineNameInput.value.trim();
+        const medicineDose = medicineDoseInput.value.trim();
+        if (medicineName !== "" && medicineDose !== "") {
+            addMedicineRow(medicineName, medicineDose);
+            medicineNameInput.value = "";
+            medicineDoseInput.value = "";
+        }
+    });
+});
+
+
+
+// تقييم الخطر 
+document.addEventListener("DOMContentLoaded", function () {
+    const likelihoodInput = document.getElementById("likelihood");
+    const impactInput = document.getElementById("impact");
+    const riskDescriptionInput = document.getElementById("riskDescription");
+    const calculateRiskButton = document.getElementById("calculateRisk");
+    const riskResultParagraph = document.getElementById("riskResult");
+
+    // دالة لحساب مستوى المخاطرة
+    function calculateRisk() {
+        const likelihood = parseInt(likelihoodInput.value);
+        const impact = parseInt(impactInput.value);
+
+        if (!isNaN(likelihood) && !isNaN(impact)) {
+            const riskValue = likelihood * impact;
+            let riskCategory = "";
+
+            if (riskValue <= 5) {
+                riskCategory = "low";
+            } else if (riskValue <= 15) {
+                riskCategory = "Medium";
+            } else {
+                riskCategory = "High";
+            }
+
+            riskResultParagraph.textContent = `Risk Level: ${riskValue}, Category: ${riskCategory}`;
+        } else {
+            riskResultParagraph.textContent = "Please enter valid values.";
+        }
+    }
+
+    // النقر على الزر لحساب مستوى المخاطرة
+    calculateRiskButton.addEventListener("click", calculateRisk);
+});
+
+
+
+
+// تحسينات التنبيهات 
+document.addEventListener("DOMContentLoaded", function () {
+    // التنبيه المخصص
+    const customAlertButton = document.getElementById("customAlert");
+    
+    customAlertButton.addEventListener("click", function () {
+        Swal.fire({
+            title: 'Custom alert',
+            text: 'This is a custom alert using SweetAlert2!',
+            icon: 'info', // Can be changed to success, warning, error, or similar
+            confirmButtonText: 'Okay'
+        });
+    });
+});
+
+
+
+// دعم اللغات 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const languageSelect = document.getElementById("language_select");
+    const welcomeMessage = document.getElementById("welcome_message");
+    const aboutUsLink = document.getElementById("about_us");
+    const contactUsLink = document.getElementById("contact_us");
+
+    // تحميل ملف الترجمة الافتراضي (الإنجليزية)
+    let currentLanguage = "en";
+    loadTranslationFile(currentLanguage);
+
+    // تغيير اللغة عند تحديد لغة جديدة من القائمة
+    languageSelect.addEventListener("change", function () {
+        currentLanguage = languageSelect.value;
+        loadTranslationFile(currentLanguage);
+    });
+
+    // دالة لتحميل ملف الترجمة وتحديث النصوص
+    function loadTranslationFile(language) {
+        fetch(`translations/${language}.json`)
+            .then((response) => response.json())
+            .then((translation) => {
+                welcomeMessage.textContent = translation.welcome_message;
+                aboutUsLink.textContent = translation.about_us;
+                contactUsLink.textContent = translation.contact_us;
+            })
+            .catch((error) => console.error("Error loading translation:", error));
+    }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dietary systems</title>
+    <style>
+     
+
+        /* الخلفية والألوان */
+        body {
+            background-image: url('img5.jpg'); /* تغيير الصورة الخلفية */
+    background-size: cover; /* تغطية الشاشة بالصورة */
+    background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+    text-align: center;
+    color: #007bff;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #555;
+            list-style: none;
+    padding-left: 0;
+        }
+        li {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+        ul li {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+        /* حقل الإدخال وزر الحساب */
+        input[type="number"] {
+            width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+        }
+        button:hover {
+    background-color: #0056b3;
+}
+        /* عناصر التواصل الاجتماعي */
+        #social-media {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fa {
+            font-size: 24px;
+            margin: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* إضافة المزيد */
+        #resources {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #resources ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        #resources ul li a:hover {
+            text-decoration: underline;
+        }
+
+        #calciumPercentage {
+    font-size: 18px;
+    color: #007bff; 
+        margin-top: 10px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#proteinPercentage {
+    font-size: 18px;
+    color: #007bff;     margin-top: 10px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#vitaminsIronPercentage {
+    font-size: 18px;
+    color: #007bff;  
+      margin-top: 10px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#fruitVegetableAmount {
+    font-size: 20px;
+    color: #007bff;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* تنسيق حاسبة السعرات الحرارية */
+
+#caloriesCalculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#caloriesCalculator h2 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#caloriesCalculator label {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#caloriesCalculator input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#caloriesCalculator button {
+    background-color: blue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#caloriesCalculator p {
+    color: #333;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#caloriesCalculator #caloriesResult {
+    font-weight: bold;
+    color: green;
+    font-size: 20px;
+}
+
+#caloriesCalculator #fruitVegetableAmount {
+    font-weight: bold;
+    color: blue;
+    font-size: 20px;
+}
+
+#caloriesResult {
+    font-size: 20px;
+    color: #007bff;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+    <h1>Dietary systems</h1>
+
+    <section>
+        <h2>Nutrition information</h2>
+        <p>Important information about nutrition and its importance to health.</p>
+    </section>
+
+    <section>
+        <h2>Nutritional advice</h2>
+        <ul>
+            <li>Eat fruits and vegetables regularly.</li>
+            <li>Drink sufficient amounts of water daily.</li>
+            <li>Avoid eating foods high in added fats and sugars.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Nutritional lists</h2>
+        <p>The nutritional menu includes:</p>
+        <ul>
+            <li>Foods rich in protein.</li>
+            <li>Foods that are beneficial for heart health.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Healthy Recipes</h2>
+        <p>Some delicious and healthy recipes for healthy meals.</p>
+    </section>
+
+    <section>
+        <h2>Weight management tips</h2>
+        <p>Some tips to help manage weight healthily:</p>
+        <ul>
+            <li>Exercise regularly.</li>
+            <li>Eat small meals regularly throughout the day.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Calorie calculator</h2>
+        <label for="age">Age (years):</label>
+        <input type="number" id="age" min="0">
+        <br>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" min="0">
+        <br>
+        <label for="height">Length (cm):</label>
+        <input type="number" id="height" min="0">
+        <br>
+        <button onclick="calculateCalories()">Calculate</button>
+        <p id="caloriesResult"></p>
+    </section>
+    <section>
+        <h2>Your daily need of fruits and vegetables (in kilograms)</h2>
+        <p id="fruitVegetableAmount"></p>
+    </section>
+
+    <section>
+        <h2>The percentage of calcium your body needs after burning calories</h2>
+        <p id="calciumPercentage"></p>
+    </section>
+
+    <section>
+        <h2>The percentage of protein that your body needs after burning calories</h2>
+        <p id="proteinPercentage"></p>
+    </section>
+
+    <section>
+        <h2>The percentage of vitamins and iron that your body needs after burning calories</h2>
+        <p id="vitaminsIronPercentage"></p>
+    </section>
+
+    <script>
+
+    let dailyCaloriesNeeded = 0; // تعريف المتغير بشكل عام
+
+    function calculateCalories() {
+        const age = parseInt(document.getElementById("age").value);
+        const weight = parseInt(document.getElementById("weight").value);
+        const height = parseInt(document.getElementById("height").value);
+
+        // قد تضيف هنا الخوارزمية الخاصة بحساب السعرات الحرارية بناءً على العمر والوزن والطول
+        // يمكنك استخدام خوارزميات مختلفة حسب الاحتياجات
+        // هذا هو مثال بسيط:
+        const basalMetabolicRate = calculateBMR(age, weight, height);
+        dailyCaloriesNeeded = calculateCaloriesNeeded(basalMetabolicRate); // تعيين القيمة في المتغير
+
+        // عرض النتائج
+        const caloriesResult = document.getElementById("caloriesResult");
+        caloriesResult.textContent = `Number of calories needed daily: ${dailyCaloriesNeeded} calories`;
+        // حساب كمية الفواكه والخضار الموصى بها يوميًا بالكيلو
+        const fruitVegetableAmount = document.getElementById("fruitVegetableAmount");
+        const fruitVegetableKilograms = Math.round(dailyCaloriesNeeded / 500); // افتراضيًا 500 سعرة حرارية تعادل كيلوغرام واحد من الفواكه والخضار
+        fruitVegetableAmount.textContent = `Your daily need for fruits and vegetables: ${fruitVegetableKilograms} kilograms`;        calculateNutritionalNeeds();
+    }
+
+    function calculateBMR(age, weight, height) {
+        // يمكنك استخدام الصيغ المختلفة لحساب معدل الأيض الأساسي (BMR)
+        // هذا هو مثال بسيط:
+        // BMR = 10 * weight (kg) + 6.25 * height (cm) - 5 * age (years) + 5 (for men) أو + 161 (for women)
+        const genderFactor = 5; // يمكن تغييره إلى 161 للنساء
+        const bmr = 10 * weight + 6.25 * height - 5 * age + genderFactor;
+        return bmr;
+    }
+
+    function calculateCaloriesNeeded(bmr) {
+        // يمكنك إضافة معاملات إضافية إذا كنت ترغب في توسيع الحساب أكثر
+        // على سبيل المثال، إذا كنت ترغب في حساب السعرات الحرارية بناءً على نشاطك البدني اليومي
+
+        const activityFactor = 1.2; // قد تقوم بتغيير هذا العامل حسب النشاط
+
+        const caloriesNeeded = bmr * activityFactor;
+        return caloriesNeeded;
+    }
+
+
+    function calculateNutritionalNeeds() {
+        const calciumPercentage = 15 ; // افتراضيًا نسبة الكالسيوم بعد الاحتساب
+        const proteinPercentage = 20; // افتراضيًا نسبة البروتين بعد الاحتساب
+        const vitaminsIronPercentage = 10; // افتراضيًا نسبة الفيتامينات والحديد بعد الاحتساب
+
+        // عرض النتائج
+        const caloriesResult = document.getElementById("caloriesResult");
+        caloriesResult.textContent = `Number of calories needed daily: ${dailyCaloriesNeeded} calories`;
+
+const fruitVegetableAmount = document. getElementById("fruitVegetableAmount");
+fruitVegetableAmount.textContent = `Your daily requirement of fruits and vegetables: ${calculateFruitVegetableAmount()} kilograms`;
+
+const calciumPercentageElement = document. getElementById("calciumPercentage");
+calciumPercentageElement.textContent = `The percentage of calcium your body needs after burning calories: %${calciumPercentage}`;
+
+const proteinPercentageElement = document. getElementById("proteinPercentage");
+proteinPercentageElement.textContent = `The percentage of protein that your body needs after burning calories: %${proteinPercentage}`;
+
+const vitaminsIronPercentageElement = document. getElementById("vitaminsIronPercentage");
+vitaminsIronPercentageElement.textContent = `The percentage of vitamins and iron that your body needs after burning calories: %${vitaminsIronPercentage}`;
+}
+
+    function calculateFruitVegetableAmount() {
+        // يمكنك حساب كمية الفواكه والخضروات بناءً على السعرات الحرارية اليومية المطلوبة
+        // يُفترض أن 500 سعرة حرارية تُعادل كيلوغرام واحد من الفواكه والخضروات
+        const fruitVegetableKilograms = Math.round(dailyCaloriesNeeded / 500);
+        return fruitVegetableKilograms;
+    }
+</script>
+
+ 
+</body>
+</html>
+

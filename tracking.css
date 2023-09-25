@@ -1,0 +1,346 @@
+/* تنسيق عنوان الصفحة */
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+body {
+    background-image: url('img4.jpg'); /* تغيير الصورة الخلفية */
+    background-size: cover; /* تغطية الشاشة بالصورة */
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+table th,
+table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+td {
+    vertical-align: middle; 
+}
+ul {
+    list-style-type: disc;
+    margin-left: 20px; 
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px; 
+}
+.container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* تنسيق نموذج تسجيل البيانات */
+#patientForm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+/* تنسيق جدول البيانات */
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#data-table th,
+#data-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+#data-table th {
+    background-color: #f2f2f2;
+}
+
+/* تنسيق مراقبة المواعيد */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#taskList li {
+    margin-bottom: 10px;
+}
+
+/* تنسيق التواصل مع الطبيب */
+#chat {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#chat-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#chat-messages div {
+    margin-bottom: 10px;
+    padding: 12px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    font-size: 16px;
+}
+#heartRateChart {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+#message {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send:hover {
+    background-color: #0056b3;
+}
+
+/* تنسيق مراقبة المؤشرات الصحية */
+#heartRateChart {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+/* تنسيق جداول التطعيمات والأدوية */
+#vaccineTable,
+#medicineTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#vaccineTable th,
+#vaccineTable td,
+#medicineTable th,
+#medicineTable td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+#vaccineTable th,
+#medicineTable th {
+    background-color: #f2f2f2;
+}
+
+/* تنسيق نموذج تقييم المخاطر */
+#riskAssessmentForm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* تنسيق تنبيه مخصص */
+#customAlert {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+a, button#customAlert {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover, button#customAlert:hover {
+    background-color: #0056b3;
+}
+
+/* تنسيق قائمة اللغات */
+#language_select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}
+#customAlert:hover {
+    background-color: #0056b3;
+}
+
+a {
+    text-decoration: none; /* إزالة التأثيرات الافتراضية للروابط */
+    color: #007BFF; /* لون الروابط */
+}
+
+a:hover {
+    text-decoration: underline; /* تحتين الروابط عند التمرير عليها */
+}
+a:visited {
+    color: red;
+}
+input[type="text"],
+input[type="number"],
+textarea {
+    transition: border-color 0.3s; /* تغيير لون الحاشية عند التركيز */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #007BFF; /* لون الحاشية عند التركيز */
+}
+select:hover {
+    background-color: #f2f2f2;
+}
+/* تنسيق حقل الإدخال */
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#addTask, #addVaccine, #addMedicine, #send {
+    background-color: blue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#addTask:hover {
+    background-color: #2980b9;
+}
+#customAlert {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#customAlert:hover {
+    background-color: #219a52;
+}
+#vaccineDate, #medicineDate {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#calculateRisk {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#calculateRisk:hover {
+    background-color: #c0392b;
+}

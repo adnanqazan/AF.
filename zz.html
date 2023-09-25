@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="ZZ.css">
+    <title> sign in </title>
+  </head>
+<body>
+    <div class="abs">
+        
+        <button id="loginButton" style="color: black;">
+            <i id="openButton" class="fa fa-reorder"></i>
+            <i id="closeButton" class="fa fa-times-circle-o"></i>
+        </button>
+        <div id="loginDropdown" class="dropdown-content">
+            <a href="adnan.html">Home</a><br><br>
+            <a href="do.html">Log In</a><br><br>
+            <a href="tasj.html">Sgin Up</a>
+        </div>
+       
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container"> 
+           <form action="#">
+                <h1>Create Account</h1> 
+                <div class="social-container"> 
+                   <a href="#" class="social"><i class="fa fa-facebook-square"></i></a> 
+                   <a href="#" class="social"><i class="fa fa-google-plus-square"></i></a>
+                    <a href="#" class="social"><i class="fa fa-linkedin-square"></i></a> 
+                   </div> 
+                   <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" />
+                     <input type="email" placeholder="Email" /> 
+                     <input type="password" placeholder="Password" /> 
+                     <button>Sign Up</button>
+                    </form> 
+                   </div>
+    <script>
+         var loginButton = document.getElementById("loginButton");
+         var openButton = document.getElementById("openButton");
+         var closeButton = document.getElementById("closeButton");
+         var loginDropdown = document.getElementById("loginDropdown");
+         openButton.addEventListener("click", function() {
+            loginDropdown.style.display = "block";
+            openButton.style.display = "none";
+            closeButton.style.display = "block";
+         });
+         closeButton.addEventListener("click", function() {
+            loginDropdown.style.display = "none";
+            openButton.style.display = "block";
+            closeButton.style.display = "none";
+        });
+
+
+        const signUpButton = document.querySelector(".sign-up-button");
+        const signInButton = document.querySelector(".sign-in-button");
+        const container = document.querySelector(".container");
+    
+        signUpButton.addEventListener("click", () => {
+            container.classList.add("sign-up-container-active");
+        });
+    
+        signInButton.addEventListener("click", () => {
+            container.classList.remove("sign-up-container-active");
+        });
+
+    </script>
+</body>
+</html>

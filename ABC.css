@@ -1,0 +1,522 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f2f2f2;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  background-image: url('img2.jpg'); /* تغيير الصورة الخلفية */
+  background-size: cover; /* تغطية الشاشة بالصورة */
+  background-repeat: no-repeat;
+}
+
+h2 {
+  font-size: 24px;
+
+}
+h1, h2, h3 {
+  color: var(--primary-color); /* لون عناوين أقوى */
+}
+
+p {
+  font-size: 18px;
+}
+:root {
+  --primary-color: #0074cc;
+  --secondary-color: #ff0000;
+}
+body div .abs {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+}
+nav,.datetime {
+  text-align: center;
+  background-color: #333;
+  padding: 10px;
+}
+
+.nav-links,.datetime {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.nav-links li,.datetime li {
+  display: inline;
+  margin-right: 15px;
+
+}
+
+.nav-links a ,.datetime a{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+}
+.nav-links a:hover ,.datetime a:hover {
+  color: var(--secondary-color); /* تغيير لون الرابط عند التمرير */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 0 0 currentColor;
+}
+
+/* Style for time element */
+.datetime {
+  font-size: 24px;
+  color: white; 
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: black; 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+  margin-top: 5px;
+  font-style: italic;
+
+}
+
+.content {
+  text-align: center;
+  padding: 100px 0;
+  transition: background-color 0.3s ease;
+}
+.content:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+footer p {
+  font-size: 14px;
+  margin: 0;
+}
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-media img {
+  width: 20px;
+  height: 20px;
+}
+.social-media a i {
+  font-size: 28px;
+  transition: color 0.3s ease;
+}
+
+.social-media a i:hover {
+  color: var(--secondary-color); /* تغيير لون الأيقونة عند التمرير */
+}
+header {
+  text-align: center;
+  background-color: #0074cc;
+  color: white;
+  text-align: center;
+  height: 250px;
+  background-image: url('img2.jpg'); /* تغيير الصورة الخلفية */
+  background-size: cover; /* تغطية الشاشة بالصورة */
+  background-repeat: no-repeat;
+  
+}
+
+header pre {
+  font-size: 24px;
+  color: white;
+  font-weight: bold; /* نمط الخط العريض */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: #0074cc;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+
+/* استهدف نموذج اتصل بنا */
+
+form {
+  background-color: #f7f7f7;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+}
+
+/* استهداف حقول الإدخال */
+form label, form input, form textarea {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+form input, form textarea {
+  width: 50%;
+  height: 50%;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+/* استهداف زر الإرسال */
+form button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+form button[type="submit"]:hover {
+  background-color: var(--secondary-color); /* تغيير لون الخلفية عند التمرير */
+}
+
+button#loginButton {
+  background-color:none; /* لون الخلفية لزر تسجيل الدخول */
+  color: #0074cc; /* لون النص داخل الزر */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+    
+}
+button#loginButton:hover {
+  color: #fff; }
+
+button#loginButton i {
+  margin-right: 5px;
+}
+/* أسلوب القائمة المنسدلة */
+div#loginDropdown {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 0;
+  margin-bottom: 445px;
+}
+#loginButton {
+  background: none; /* إزالة الخلفية */
+  padding: 0; /* إزالة الحشوة داخل الزر */
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+#loginButton i {
+  margin-right: 5px;
+  
+}
+
+.fa.fa-times-circle-o {
+  font-size: 20px;
+  color: black; /* لون أحمر للتنبيه */
+  cursor: pointer;
+  display: none;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #0074cc;
+  color: white;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #005aa7;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin-bottom: 10px;
+  }
+}
+.abs a {
+  color:black; /* لون النص */
+  text-decoration: none; /* إزالة تزيين الروابط (التأثير السفلي) */
+}
+.abs a:hover { 
+  padding: 10px;
+  border: pink ;
+  border-radius: 5px; 
+  color: white;
+  background-color: rgb(11, 20, 140);
+  text-decoration: none; 
+}
+
+/* الايميل ورقم الهاتف*/
+.title { 
+  display: flex;
+ justify-content: center;
+ color: black;
+font-weight: 800;
+font-size: 2.2em;
+ margin-bottom: 30px;
+ }
+ .qaz {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap; 
+ }
+
+.card {
+  background-color: #fff;
+  width: 21.25em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 25px; 
+  margin: 15px;
+  transition: 0.7s ease;
+} 
+.card:hover {
+  transform: scale(1.1); 
+}
+
+.icon { 
+  color: #3a6cf4;
+  font-size: 8em;
+  text-align: center;
+} 
+.info {
+  text-align: center;
+}
+.info h3{
+  color: #3a6cf4; 
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.fa {
+  font-size: 20px;
+  margin-right: 10px;
+}    
+
+.qaz.icon {
+ font-size: 4.5em;
+} 
+
+.qaz.info h3 {
+ color: #000;
+}
+
+.qaz.info p { 
+ font-size: 1.5em; 
+}
+
+ .cards h2.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cards .qaz {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards .card {
+  flex-basis: 35%;
+  padding: 20px; /* زيادة التباعد */
+  background-color: #f9f9f9;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cards .card:hover {
+  background-color: #e9e9e9;
+}
+
+ /* تنسيقات زر الصعود الى الاعلى */
+ #scrollToTopBtn {
+  background-color: var(--primary-color);
+   color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  transition: background-color 0.3s ease;
+}
+#scrollToTopBtn:hover {
+  background-color: var(--secondary-color);}
+
+
+
+/* تنسيق زر البحث */
+#searchButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px; /* زيادة الحجم */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* تنسيق زر البحث عند تمرير المؤشر */
+#searchButton:hover {
+  background-color: var(--secondary-color);
+}
+
+#searchInput{
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+.social-media a {
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+/* CSS */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* المسافة بين الصور */
+}
+
+.gallery-item {
+  flex-basis: calc(33.33% - 20px); /* توزيع الصور بنسب متساوية على الشاشة */
+  overflow: hidden; /* لضمان عدم تجاوز الصورة حجمها المحدد */
+  border: 1px solid #ccc; /* حدود للصور */
+  border-radius: 5px; /* تدوير الزوايا لتصميم أنيق */
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s; /* تأثير عند تحويل الماوس فوق الصورة */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* تكبير الصورة عند تحويل الماوس فوقها */
+}
+* {box-sizing: border-box;}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 60px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brightness_2 {color: #f1c40f;}
+
+.brightness_7 {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(32px);
+}
+body {
+  background-color: #ffffff; /* الخلفية البيضاء */
+  color: #000000; /* النص الأسود */
+}
+
+/* تنسيقات وضع الظلام */
+body.dark {
+  background-color: #000000; /* الخلفية السوداء */
+  color: #ffffff; /* النص الأبيض */
+}
+.dark {
+  background-color: #1f1f1f; /* لون الخلفية في وضع الظلام */
+  color: #ffffff; /* لون النص في وضع الظلام */
+}
+

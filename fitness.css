@@ -1,0 +1,399 @@
+/* تنسيقات عامة للنص */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url('img1.jpg'); /* تغيير الصورة الخلفية */
+    background-size: cover; /* تغطية الشاشة بالصورة */
+    background-repeat: no-repeat;
+}
+a {
+    color: #007bff; /* لون الروابط */
+    text-decoration: none; /* إزالة التأشيرة الزرقاء للروابط */
+}
+
+a:hover {
+    text-decoration: underline; /* تحتين الروابط عند التحويم */
+}
+button {
+    background-color: #333; /* لون الخلفية */
+    color: #fff; /* لون النص */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* تأثير التغيير عند التحويم */
+}
+
+button:hover {
+    background-color: #555; /* لون الخلفية عند التحويم */
+}
+
+/* تنسيقات لعنوان الصفحة */
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+ul {
+    list-style-type: none; /* إزالة نقاط القائمة */
+}
+
+li {
+    margin-bottom: 10px; /* تباعد بين عناصر القائمة */
+}
+p {
+    font-size: 16px; /* حجم النص */
+    line-height: 1.6; /* تباعد الأسطر */
+    color: #333; /* لون النص */
+}
+
+/* تنسيقات للقسم الرئيسي "اللياقة البدنية" */
+#fitness {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#fitness h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+#fitness p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* تنسيقات للنصائح للياقة البدنية */
+#fitness-tips {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: relative; /* العنصر ذو موقع نسبي */
+    top: 20px; /* تحديد الارتفاع بالنسبة للمكان الأصلي */
+
+}
+
+#fitness-tips h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+#fitness-tips ul {
+    font-size: 16px;
+    color: #555;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* تنسيقات لعداد الخطوات */
+#step-counter {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#step-counter h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+#stepCount {
+    font-size: 24px;
+    color: #007BFF;
+}
+
+#startWalking, #resetSteps {
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#startWalking:hover, #resetSteps:hover {
+    background-color: #0056b3;
+}
+
+/* تنسيقات لنموذج تقييم اللياقة البدنية */
+#fitness-assessment {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#fitness-assessment h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+#fitnessForm label {
+    font-size: 16px;
+    color: #555;
+    display: block;
+    margin-top: 10px;
+}
+
+#fitnessForm input[type="number"], #fitnessForm select {
+    font-size: 16px;
+    padding: 5px;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#fitnessForm button[type="submit"] {
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#fitnessForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#fitnessRecommendation {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* تنسيقات للأجهزة الرياضية والمعدات */
+.fitness-equipment {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.fitness-equipment h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.fitness-equipment ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.fitness-equipment li {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* تنسيقات لخدمات التدريب الشخصي */
+/* تنسيقات لخدمات التدريب الشخصي */
+.personal-training {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.personal-training h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.personal-training p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* تنسيقات لجدولة الأحداث */
+.fitness-events {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.fitness-events h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.fitness-events p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.fitness-events ul {
+    list-style-type: disc;
+    font-size: 16px;
+    color: #555;
+    margin-left: 20px;
+}
+
+/* تنسيقات لقائمة الفيديوهات التمرينية */
+.workout-videos {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.workout-videos h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.workout-videos p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.workout-videos ul {
+    list-style-type: disc;
+    font-size: 16px;
+    color: #555;
+    margin-left: 20px;
+}
+
+.workout-videos a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.workout-videos a:hover {
+    text-decoration: underline;
+}
+
+/* تنسيقات لمعلومات التغذية */
+.nutrition-info {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.nutrition-info h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.nutrition-info p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.nutrition-info ul {
+    list-style-type: disc;
+    font-size: 16px;
+    color: #555;
+    margin-left: 20px;
+}
+
+.nutrition-info a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.nutrition-info a:hover {
+    text-decoration: underline;
+}
+
+/* تنسيقات لنافذة التواصل */
+.contact-window {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* الايميل ورقم الهاتف*/
+.title { 
+    display: flex;
+   justify-content: center;
+   color: #3a6cf4;
+  font-weight: 800;
+  font-size: 2.2em;
+   margin-bottom: 30px;
+   }
+   .qaz {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+     flex-wrap: wrap; 
+   }
+  
+  .card {
+     background-color: #fff;
+     width: 21.25em;
+      box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+       border-radius: 10px;
+        padding: 25px; 
+        margin: 15px;
+         transition: 0.7s ease;
+         } 
+         .card:hover {
+             transform: scale(1.1); 
+            }
+  
+  .icon { 
+     color: #3a6cf4;
+     font-size: 8em;
+      text-align: center;
+     } 
+     .info {
+         text-align: center;
+         }
+          .info h3{
+             color: #3a6cf4; 
+             font-size: 1.2em;
+              font-weight: 700;
+               margin: 10px;
+             }
+  .qaz.icon {
+   font-size: 4.5em;
+   } 
+  .qaz.info h3 {
+   color: #000;
+  }
+  .qaz.info p { 
+   font-size: 1.5em; 
+   }
+
+/* تنسيقات لحقوق النشر */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.social-media a {
+    margin-right: 10px;
+}

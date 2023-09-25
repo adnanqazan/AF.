@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="fitness.css">
+    <title> Fitness </title>
+</head>
+<body>
+    <div class="nav-links" id="fitness">
+        <h2> Fitness </h2>
+        <p><b>Fitness promotes health and physical fitness...</b></p>
+        <!--محتوى "اللياقة البدنية" هنا-->
+    </div>  
+    <!-- في الجزء الخاص بالنصائح للياقة البدنية -->
+<section id="fitness-tips">
+    <h2>Fitness Tips</h2>
+    <ul>
+        <li>Stretch before starting exercises to avoid injuries.</li>
+        <li>Drink an adequate amount of water during exercises.</li>
+        <li>Set specific goals to increase motivation.</li>
+    </ul>
+
+</section>
+
+
+
+<!-- في الجزء الخاص بالعداد للخطوات -->
+<section id="step-counter">
+    <h2>Step Counter</h2>
+        <p>Number of Steps: <span id="stepCount">0</span></p>
+        <button id="startWalking">Start Walking</button>
+        <button id="resetSteps">Reset Steps</button>
+</section>
+
+
+
+<!-- في الجزء الخاص بنموذج تقييم اللياقة البدنية -->
+<section id="fitness-assessment">
+    <h2>Fitness Assessment Form</h2>
+    <form id="fitnessForm">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required><br>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" required><br>
+
+        <label for="exerciseType">Exercise Type:</label>
+        <select id="exerciseType" name="exerciseType">
+            <option value="cardio">Cardio</option>
+            <option value="strength">Strength</option>
+            <option value="flexibility">Flexibility</option>
+        </select><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="fitnessRecommendation">
+        <!-- Recommendations will be displayed here -->
+    </div>
+</section>
+
+
+
+
+    <!--  أجهزة رياضية ومعدات -->
+    <section class="fitness-equipment">
+        <h2>Fitness Equipment</h2>
+        <ul>
+            <li>
+                <h3>Treadmill</h3>
+                <p>An electric treadmill to improve your fitness.</p>
+                <p>Price: $500</p>
+            </li>
+            <li>
+                <h3>Stationary Bike</h3>
+                <p>A stationary bike for cardio exercises.</p>
+                <p>Price: $300</p>
+            </li>
+            <!-- You can add more equipment here -->
+        </ul>
+    </section>
+
+    <!--  خدمات تدريب شخصي -->
+    <section class="personal-training">
+        <h2>Personal Training Services</h2>
+        <p>We offer personal training services with professional trainers.</p>
+        <p>For booking and inquiries, contact us at: 123-456-789</p>
+    </section>
+
+    <!-- Fitness events schedule section -->
+    <section class="fitness-events">
+        <h2>Fitness Events Schedule</h2>
+        
+       
+<p>Discover upcoming events at the club and join us!</p>
+        <ul>
+            <li>Yoga class on Mondays at 6 PM.</li>
+            <li>30-day Strength Building Challenge starting next Wednesday.</li>
+            <!-- You can add more events here -->
+        </ul>
+    </section>
+
+    <!--  قائمة الفيديوهات التمرينية -->
+    <section class="workout-videos">
+        <h2>Workout Videos Playlist</h2>
+        <p>Learn with our collection of exercise videos.</p>
+        <ul>
+            <li><a href="#">Ab Workouts</a></li>
+            <li><a href="#">Push-up Exercises</a></li>
+            <li><a href="#">Leg Workouts</a></li>
+            <!-- You can add more exercise video links here -->
+        </ul>
+    </section>
+
+    <!-- Nutrition information section -->
+    <section class="nutrition-info">
+        <h2>Nutrition Information</h2>
+        <p>Get essential information on healthy nutrition and dietary tips.</p>
+        <ul>
+            <li><a href="#">Tips for Improving Your Diet</a></li>
+            <li><a href="#">Information on Proteins and Carbohydrates</a></li>
+            <!-- You can add more nutrition information links here -->
+        </ul>
+    </section>
+
+    <section class="cards contact" id="qaz"> 
+        <h2 class="title">If you have any inquiries or need assistance, please contact us.</h2> 
+        <div class="qaz">
+            <div class="card" >
+                <div class="icon">
+                    <i class="fa fa-phone">  </i>
+                </div> 
+                <div class="info" onclick="callPhoneNumber">
+                    <h3>Phone</h3> 
+                    <p>0778943258</p>
+                </div>
+            </div>
+            <div class="card"> 
+                <div class="icon">
+                    <i class="fa fa-envelope"></i>
+                </div> 
+                <div class="info" onclick="sendEmail"> 
+                    <h3>Email</h3>
+                    <p>adnanqazan5@gmail.com</p>
+                </div> 
+            </div>
+        </div> 
+    </section>
+    <!--  حقوق النشر -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fa fa-facebook-square" style="font-size: 44px; color: cornflowerblue"></i></a>
+            <a href="#"><i class="fa fa-instagram" style="font-size: 44px; color: deeppink;"></i></a>
+            <script>
+
+                // التحقق من دعم المستعرض لمستشعر الخطوات
+                if ('ondevicemotion' in window) {
+                    var stepCountDisplay = document.getElementById("stepCount");
+                    var totalSteps = 0;
+        
+                    // تسجيل الحدث عند الكشف عن حركة (خطوة)
+                    window.addEventListener('devicemotion', function (event) {
+                        var acceleration = event.accelerationIncludingGravity;
+                        var magnitude = Math.sqrt(acceleration.x * acceleration.x + acceleration.y * acceleration.y + acceleration.z * acceleration.z);
+                        
+                        // تحديث عداد الخطوات عندما يكتشف حركة تدل على خطوة
+                        if (magnitude > 12) { // يمكنك تعديل هذا الرقم حسب تحسين الأداء
+                            totalSteps++;
+                            stepCountDisplay.textContent = totalSteps;
+                        }
+                    });
+                } else {
+                    // إذا لم يتم دعم مستشعر الخطوات
+                    stepCountDisplay.textContent = "غير مدعوم";
+                }
+
+
+                function sendEmail() {
+    var email = "adnanqazan5@gmail.com"; // البريد الإلكتروني الذي ترغب في إرسال البريد إليه
+    // يمكنك استخدام window.open لفتح نافذة البريد الإلكتروني مع البريد المستهدف.
+    window.open("mailto:" + email);
+}
+
+function callPhoneNumber() {
+    var phoneNumber = "0778943258"; // رقم الهاتف الذي ترغب في الاتصال به
+    // يمكنك استخدام window.open لفتح نافذة اتصال هاتفي مع الرقم المستهدف.
+    window.open("tel:" + phoneNumber);
+}
+
+
+    var weightInput = document.getElementById("weight");
+    var heightInput = document.getElementById("height");
+    var exerciseTypeInput = document.getElementById("exerciseType");
+    var fitnessForm = document.getElementById("fitnessForm");
+
+    // تعريف دالة لمعالجة عند تقديم النموذج
+    fitnessForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // منع إعادة تحميل الصفحة
+
+        // جمع البيانات من عناصر النموذج
+        var weight = weightInput.value;
+        var height = heightInput.value;
+        var exerciseType = exerciseTypeInput.value;
+
+        // هنا يمكنك تنفيذ الإجراءات التي تريدها مع البيانات، مثل إرسالها إلى الخادم أو عرضها للمستخدم
+        // على سبيل المثال، يمكنك عرض البيانات في العنصر div الموجود لديك بالشكل الذي تريده.
+
+        var fitnessRecommendation = document.getElementById("fitnessRecommendation");
+        fitnessRecommendation.innerHTML = `
+            <h3>معلومات الاتصال:</h3>
+            <p>الوزن: ${weight} كجم</p>
+            <p>الطول: ${height} سم</p>
+            <p>نوع التمرين: ${exerciseType}</p>
+        `;
+    });
+            </script>
+</body>
+</html>
